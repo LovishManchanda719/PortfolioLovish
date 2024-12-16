@@ -1,9 +1,6 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/Portfolio---Copy---Copy',
-  assetPrefix: '/Portfolio---Copy---Copy',
   images: {
     unoptimized: true,
     domains: ['drive.google.com', 'lh3.googleusercontent.com'], // Add lh3.googleusercontent.com
@@ -17,7 +14,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com', // Add this pattern
         pathname: '**',
-      }
+      },
     ],
   },
   eslint: {
@@ -26,6 +23,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
