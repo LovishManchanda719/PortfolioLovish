@@ -2,8 +2,8 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/Portfolio',
-  assetPrefix: '/Portfolio/',
+  basePath: '/portfolio',
+  assetPrefix: '/portfolio/',
   images: {
     unoptimized: true,
     domains: ['drive.google.com', 'lh3.googleusercontent.com'], // Add lh3.googleusercontent.com
