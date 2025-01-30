@@ -9,7 +9,12 @@ const Projects = () => {
       name: 'Wanderlust',
       description: 'A full-stack MERN project for hotel bookings and listings.',
       link: 'https://wanderlust-hd9q.onrender.com',
-      image: 'https://drive.google.com/thumbnail?id=1dXmS0c-dXfc7e6oE1bQf4a_WUBdh1xIZ'
+      image: 'https://lh3.googleusercontent.com/d/1dXmS0c-dXfc7e6oE1bQf4a_WUBdh1xIZ'
+    },{
+      name: 'Shiv Band & Light House',
+      description: 'A full-stack NEXT project for booking Wedding Bands and related services',
+      link: 'https://shiv-band.vercel.app/',
+      image: 'https://lh3.googleusercontent.com/d/1SS_Ih7Yr2qKtJ8vrmazpB07rH9mDjVgN'
     },
     {
       name: 'Water Distribution System',
