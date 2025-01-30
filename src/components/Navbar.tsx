@@ -1,9 +1,8 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Moon, Sun, LogIn, LogOut, MessageCircle } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
 
 interface NavbarProps {
