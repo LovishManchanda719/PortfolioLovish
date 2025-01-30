@@ -11,7 +11,6 @@ import Education from '@/components/Education';
 import Achievements from '@/components/Achievements';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import { useAuth } from '@/context/AuthContext';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
