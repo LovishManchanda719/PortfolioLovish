@@ -15,8 +15,6 @@ import { useAuth } from '@/context/AuthContext';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const { currentUser } = useAuth();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
