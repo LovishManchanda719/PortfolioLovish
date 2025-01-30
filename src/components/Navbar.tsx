@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Moon, Sun, LogIn, LogOut, MessageCircle } from 'lucide-react';
-import { useAuth } from '@/context/AuthContext';
 import { useRouter, usePathname } from 'next/navigation';
 
 interface NavbarProps {
@@ -16,7 +15,6 @@ const Navbar: React.FC<NavbarProps> = ({
   isDarkMode, 
   toggleDarkMode 
 }) => {
-  const { currentUser, logout } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -56,18 +54,6 @@ const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
-  const handleAuthAction = async () => {
-    if (currentUser) {
-      try {
-        await logout();
-        router.push('/');
-      } catch (error) {
-        console.error('Logout failed', error);
-      }
-    } else {
-      router.push('/auth');
-    }
-  };
 
   return (
     <motion.nav 
@@ -103,54 +89,6 @@ const Navbar: React.FC<NavbarProps> = ({
               </button>
             </motion.div>
           ))}
-
-          {/* Chat Page Link - Only show when user is logged in */}
-          {currentUser && (
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link 
-                href="/chat"
-                className={`flex items-center space-x-2 px-3 py-2 rounded-full ${
-                  isDarkMode 
-                    ? 'bg-green-700 hover:bg-green-600 text-white' 
-                    : 'bg-green-500 hover:bg-green-600 text-white'
-                }`}
-              >
-                <MessageCircle size={20} />
-                <span>Chat</span>
-              </Link>
-            </motion.div>
-          )}
-
-          {/* Authentication Button */}
-          <motion.button 
-            onClick={handleAuthAction}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className={`flex items-center space-x-2 px-3 py-2 rounded-full ${
-              currentUser 
-                ? (isDarkMode 
-                    ? 'bg-red-700 hover:bg-red-600 text-white' 
-                    : 'bg-red-500 hover:bg-red-600 text-white')
-                : (isDarkMode 
-                    ? 'bg-blue-700 hover:bg-blue-600 text-white' 
-                    : 'bg-blue-500 hover:bg-blue-600 text-white')
-            }`}
-          >
-            {currentUser ? (
-              <>
-                <LogOut size={20} />
-                <span>Logout</span>
-              </>
-            ) : (
-              <>
-                <LogIn size={20} />
-                <span>Login</span>
-              </>
-            )}
-          </motion.button>
 
           {/* Dark Mode Toggle */}
           <motion.button 
