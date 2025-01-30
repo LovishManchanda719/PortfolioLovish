@@ -11,9 +11,6 @@ import {
     SiHtml5,
     SiCss3,
     SiBootstrap,
-    SiMongodb,
-    SiExpress,
-    SiNodedotjs
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 

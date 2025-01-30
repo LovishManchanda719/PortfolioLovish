@@ -8,7 +8,6 @@ import { useAuth } from '@/context/AuthContext';
 
 export default function ChatLayout({ children }: { children: React.ReactNode }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const { currentUser } = useAuth();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');

@@ -16,7 +16,7 @@ const AuthPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
+  
     try {
       if (isLogin) {
         await login(email, password);
@@ -25,30 +25,35 @@ const AuthPage = () => {
         await signup(email, password);
         router.push('/'); // Redirect to home after signup
       }
-    } catch (err: any) {
-      // Handle specific Firebase error codes
-      const errorCode = err.message || err.code;
-      switch (errorCode) {
-        case 'auth/invalid-email':
-          setError('Invalid email address.');
-          break;
-        case 'auth/user-not-found':
-          setError('No user found with this email.');
-          break;
-        case 'auth/wrong-password':
-          setError('Incorrect password.');
-          break;
-        case 'auth/email-already-in-use':
-          setError('Email already in use. Please try logging in or use a different email.');
-          break;
-        case 'auth/weak-password':
-          setError('Password is too weak. Please use a stronger password.');
-          break;
-        default:
-          setError('An unexpected error occurred. Please try again.');
+    } catch (err: unknown) {
+      // Narrow the type if it's an instance of Error
+      if (err instanceof Error) {
+        const errorCode = err.message || err.name;
+        switch (errorCode) {
+          case 'auth/invalid-email':
+            setError('Invalid email address.');
+            break;
+          case 'auth/user-not-found':
+            setError('No user found with this email.');
+            break;
+          case 'auth/wrong-password':
+            setError('Incorrect password.');
+            break;
+          case 'auth/email-already-in-use':
+            setError('Email already in use. Please try logging in or use a different email.');
+            break;
+          case 'auth/weak-password':
+            setError('Password is too weak. Please use a stronger password.');
+            break;
+          default:
+            setError('An unexpected error occurred. Please try again.');
+        }
+      } else {
+        setError('An unexpected error occurred. Please try again.');
       }
     }
   };
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">

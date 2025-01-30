@@ -8,7 +8,8 @@ import {
   orderBy, 
   limit, 
   onSnapshot, 
-  serverTimestamp 
+  serverTimestamp, 
+  Timestamp
 } from 'firebase/firestore';
 import { firestore } from '@/lib/firebaseConfig';
 import { useAuth } from '@/context/AuthContext';
@@ -16,7 +17,7 @@ import { useAuth } from '@/context/AuthContext';
 interface Message {
   id: string;
   text: string;
-  createdAt: any;
+  createdAt: Timestamp;
   userId: string;
   userName: string;
 }

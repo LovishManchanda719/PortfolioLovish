@@ -34,13 +34,6 @@ const App = () => {
     document.documentElement.classList.toggle('dark', newMode);
   };
 
-  const toggleChat = () => {
-    // Only allow chat toggle if user is logged in
-    if (currentUser) {
-      setIsChatOpen(!isChatOpen);
-    }
-  };
-
   return (
     <div className={`${isDarkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-black'} min-h-screen transition-colors duration-300`}>
       <Navbar 
