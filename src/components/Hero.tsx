@@ -122,19 +122,19 @@ const Hero = () => {
               { 
                 icon: <Mail className="mr-2" />, 
                 text: 'Contact Me', 
-                href: 'mailto:your.email@example.com',
+                href: 'mailto:lovishmanchanda480@gmail.com',
                 color: 'bg-red-500 hover:bg-red-600' 
               },
               { 
                 icon: <Linkedin className="mr-2" />, 
                 text: 'LinkedIn', 
-                href: 'https://linkedin.com/in/yourprofile',
+                href: 'https://linkedin.com/in/lovish45',
                 color: 'bg-blue-600 hover:bg-blue-700' 
               },
               { 
                 icon: <Github className="mr-2" />, 
                 text: 'Github', 
-                href: 'https://github.com/yourusername',
+                href: 'https://github.com/lovishmanchanda719',
                 color: 'bg-gray-800 hover:bg-black' 
               },
               { 
