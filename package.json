@@ -1,10 +1,10 @@
 {
-    "homepage": "https://lovishmanchanda719.github.io/Portfolio",
+    "homepage": "https://lovishmanchanda719.github.io/PortfolioLovish",
     "name": "my-project",
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "predeploy": "npm run build",
+        "predeploy": "npm run build && npm run export",
         "deploy": "gh-pages -d out",
         "export": "next export",
         "dev": "next dev",

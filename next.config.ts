@@ -1,23 +1,11 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  basePath: '/Portfolio', // Replace 'Portfolio' with your repository name
-  assetPrefix: '/Portfolio/', // Replace 'Portfolio' with your repository name
+  output: 'export', // Required for static export (Next.js 13+)
+  basePath: '/PortfolioLovish', // GitHub repo name
+  assetPrefix: '/PortfolioLovish/', // Ensures correct asset loading
   images: {
-    unoptimized: true,
-    domains: ['drive.google.com', 'lh3.googleusercontent.com'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-        pathname: '**',
-      },
-    ],
+    unoptimized: true, // GitHub Pages does not support Next.js Image Optimization
   },
   eslint: {
     ignoreDuringBuilds: true,
